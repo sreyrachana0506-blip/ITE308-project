@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <p id="status-banner" class="status-banner" hidden></p>
+
+        <header class="header">
+            <h1>Todo List</h1>
+            <p id="items-left">0 items left</p>
+        </header>
+
+        <form class="add-form" id="add-form">
+            <input
+                type="text"
+                id="todo-input"
+                placeholder="What needs to be done?"
+                autocomplete="off"
+                maxlength="200"
+            >
+            <button type="submit" class="btn btn-add">Add</button>
+        </form>
+
+        <nav class="filters" aria-label="Filter todos">
+            <button type="button" class="filter-btn is-active" data-filter="all">All</button>
+            <button type="button" class="filter-btn" data-filter="active">Active</button>
+            <button type="button" class="filter-btn" data-filter="completed">Done</button>
+        </nav>
+
+        <ul class="todo-list" id="todo-list"></ul>
+
+        <footer class="footer">
+            <span id="total-count">0 total</span>
+            <button type="button" class="btn-clear" id="clear-completed" disabled>
+                Clear completed
+            </button>
+        </footer>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

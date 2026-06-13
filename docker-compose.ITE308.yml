@@ -1,0 +1,13 @@
+services:
+  todo-app:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - todo_data:/data
+    restart: unless-stopped
+
+volumes:
+  todo_data:
